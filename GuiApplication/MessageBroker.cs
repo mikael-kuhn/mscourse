@@ -13,7 +13,7 @@ namespace Infrastructure
         public MessageBroker()
         {
 
-            _connection = EventStoreConnection.Create(new Uri("tcp://admin:changeit@eventstore:1113"));
+            _connection = EventStoreConnection.Create(new Uri("tcp://admin:changeit@127.0.0.1:1113"));
             _connection.ConnectAsync().Wait();
         }
 
