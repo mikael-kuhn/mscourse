@@ -2,10 +2,11 @@
 using System.Net;
 using System.Text;
 using EventStore.ClientAPI;
+using Newtonsoft.Json;
 
 namespace Infrastructure
 {
-    public sealed class MessageBroker
+    public sealed class MessageBroker : IMessageBroker
     {
         private readonly IEventStoreConnection _connection;
 
@@ -16,27 +17,31 @@ namespace Infrastructure
             _connection.ConnectAsync().Wait();
         }
 
-        public string Read(string stream, int eventNumber)
+        public T Read<T>(int eventNumber)
+            where T : class
         {
-            var result = _connection.ReadEventAsync(stream, eventNumber, false).Result;
+            var result = _connection.ReadEventAsync(typeof(T).Name, eventNumber, false).Result;
             if (result.Event.HasValue)
             {
-                return Encoding.UTF8.GetString(result.Event.Value.OriginalEvent.Data);
+                string message = Encoding.UTF8.GetString(result.Event.Value.OriginalEvent.Data);
+                return JsonConvert.DeserializeObject<T>(message);
             }
             return null;
         }
 
-        public void Write(string stream, string message)
+        public void Write<T>(T message)
         {
+            string json = JsonConvert.SerializeObject(message);
+
             var @event = new EventData(
                 Guid.NewGuid(),
                 "event",
                 false,
-                Encoding.UTF8.GetBytes(message),
+                Encoding.UTF8.GetBytes(json),
                 Encoding.UTF8.GetBytes(string.Empty)
                 );
 
-            _connection.AppendToStreamAsync(stream, ExpectedVersion.Any, @event).Wait();
+            _connection.AppendToStreamAsync(message.GetType().Name, ExpectedVersion.Any, @event).Wait();
         }
     }
 }

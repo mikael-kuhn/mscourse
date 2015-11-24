@@ -1,7 +1,0 @@
-﻿
-namespace ReportGenerator
-{
-    class InvoiceReportCreated
-    {
-    }
-}

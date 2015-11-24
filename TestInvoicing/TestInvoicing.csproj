@@ -39,6 +39,10 @@
       <HintPath>..\packages\EventStore.Client.3.3.1\lib\net40\EventStore.ClientAPI.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -58,33 +62,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gui\Gui.csproj">
-      <Project>{244671f0-d9c2-4680-874f-6e43161484da}</Project>
-      <Name>Gui</Name>
+    <ProjectReference Include="..\GuiApplication\GuiApplication.csproj">
+      <Project>{15444d1d-4e69-4aa9-98c2-e53074d7c1e5}</Project>
+      <Name>GuiApplication</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{79c8145c-b922-4c8d-9176-4af62ea01e61}</Project>
       <Name>Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InvoiceCreator\InvoiceCreator.csproj">
-      <Project>{91fc86d7-2fc4-459e-bc08-f88742548d49}</Project>
-      <Name>InvoiceCreator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LogIt\LogIt.csproj">
-      <Project>{0f2ca4da-58fe-43ed-8504-b441b5fdc206}</Project>
-      <Name>LogIt</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PriceGiver\BookingPriceGiver.csproj">
-      <Project>{d31d4973-436b-4e62-b86c-561f9c01d2c1}</Project>
-      <Name>BookingPriceGiver</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReportGenerator\ReportGenerator.csproj">
-      <Project>{57209e2b-c0d0-4376-acc5-4cdb126dfae8}</Project>
-      <Name>ReportGenerator</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

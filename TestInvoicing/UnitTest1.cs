@@ -1,6 +1,6 @@
-﻿using Gui;
+﻿using System;
+using GuiApplication;
 using Infrastructure;
-using LogIt;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestInvoicing
@@ -17,13 +17,20 @@ namespace TestInvoicing
             Assert.AreEqual(4, Logger.Items.Count);
         }
 
+        public class TestMessage
+        {
+            public Guid Id { get; set; }
+            public string Text { get; set; }
+
+        }
         [TestMethod]
         public void TestBroker()
         {
+            TestMessage message = new TestMessage {Id = Guid.NewGuid(), Text = "Some text"};
             MessageBroker broker = new MessageBroker();
-            broker.Write("test", "{ number: 1 }");
-            string message = broker.Read("test", 1);
-            Assert.IsNotNull(message);
+            broker.Write(message);
+            TestMessage readMessage = broker.Read<TestMessage>(0);
+            Assert.IsNotNull(readMessage);
         }
     }
 }
