@@ -66,10 +66,6 @@
       <Project>{15444d1d-4e69-4aa9-98c2-e53074d7c1e5}</Project>
       <Name>GuiApplication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
-      <Project>{79c8145c-b922-4c8d-9176-4af62ea01e61}</Project>
-      <Name>Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

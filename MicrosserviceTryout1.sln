@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestInvoicing", "TestInvoicing\TestInvoicing.csproj", "{672821C0-B815-484B-B057-8C7B15AB04F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{79C8145C-B922-4C8D-9176-4AF62EA01E61}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingPriceGiverService", "BookingPriceGiverService\BookingPriceGiverService.csproj", "{0A8415B0-C1E5-42C9-9ACC-92F3033483BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiApplication", "GuiApplication\GuiApplication.csproj", "{15444D1D-4E69-4AA9-98C2-E53074D7C1E5}"
@@ -25,10 +23,6 @@ Global
 		{672821C0-B815-484B-B057-8C7B15AB04F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{672821C0-B815-484B-B057-8C7B15AB04F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{672821C0-B815-484B-B057-8C7B15AB04F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79C8145C-B922-4C8D-9176-4AF62EA01E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79C8145C-B922-4C8D-9176-4AF62EA01E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79C8145C-B922-4C8D-9176-4AF62EA01E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79C8145C-B922-4C8D-9176-4AF62EA01E61}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A8415B0-C1E5-42C9-9ACC-92F3033483BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A8415B0-C1E5-42C9-9ACC-92F3033483BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A8415B0-C1E5-42C9-9ACC-92F3033483BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
