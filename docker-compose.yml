@@ -1,0 +1,14 @@
+bookingpricegiverservice:
+  image: bookingpricegiverservice
+  links:
+  - eventstore
+invoicecreatorservice:
+  image: invoicecreatorservice
+  links:
+  - eventstore
+reportgeneratorservice:
+  image: reportgeneratorservice
+  links:
+  - eventstore
+eventstore:
+  image: adbrowne/eventstore
