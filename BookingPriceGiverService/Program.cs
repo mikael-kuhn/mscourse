@@ -9,7 +9,7 @@ namespace BookingPriceGiverService
         {
             Console.WriteLine("BookingPriceGiver");
 
-            Runner.Run<BookingReadyForInvoicing, BookingPriceGiver>();
+            Runner.Run<BookingReadyForInvoicing, BookingPriceGiver>(new MessageBroker());
         }
     }
 }

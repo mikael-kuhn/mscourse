@@ -4,12 +4,11 @@ namespace Infrastructure
 {
     public sealed class Runner
     {
-        public static void Run<TIncomingEvent, TService>(int startFrom = 0)
+        public static void Run<TIncomingEvent, TService>(IMessageBroker messageBroker, int startFrom = 0)
             where TIncomingEvent: Event
             where TService: BaseService<TIncomingEvent>, new()
         {
             int eventNumber = startFrom;
-            MessageBroker messageBroker = new MessageBroker();
             while (true)
             {
                 var message = messageBroker.Read<TIncomingEvent>(eventNumber);

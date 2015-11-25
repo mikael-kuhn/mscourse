@@ -13,7 +13,7 @@ namespace InvoiceCreatorService
         {
             Console.WriteLine("InvoiceCreator");
 
-            Runner.Run<BookingPriced, InvoiceCreator>();
+            Runner.Run<BookingPriced, InvoiceCreator>(new MessageBroker());
         }
     }
 }

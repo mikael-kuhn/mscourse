@@ -9,7 +9,7 @@ namespace ReportGeneratorService
         {
             Console.WriteLine("ReportGenerator");
 
-            Runner.Run<InvoiceCreated, ReportGenerator>();
+            Runner.Run<InvoiceCreated, ReportGenerator>(new MessageBroker());
         }
     }
 }
